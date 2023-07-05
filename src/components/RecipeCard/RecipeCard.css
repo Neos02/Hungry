@@ -1,0 +1,48 @@
+.RecipeCard__container {
+  position: relative;
+  display: inline-flex;
+  width: 20em;
+  height: 12em;
+  border-radius: 0.75em;
+  color: white;
+  overflow: hidden;
+}
+
+.RecipeCard__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.RecipeCard__info {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 0.5em 1em 1em 1em;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.RecipeCard__time {
+  opacity: 0.75;
+}
+
+.RecipeCard__lower {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.RecipeCard__rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25em;
+}
