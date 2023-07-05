@@ -1,15 +1,17 @@
 import React from "react";
 
-import FoodImage from "../../assets/temp/Food Image.png";
-
 import "./FeaturedItem.css";
 
-const FeaturedItem = () => {
+const FeaturedItem = ({ title, description, image }) => {
   return (
     <div className="FeaturedItem__container">
-      <img className="FeaturedItem__img" src={FoodImage} alt="Featured" />
+      <img className="FeaturedItem__img" src={image} alt={title} />
 
-      <div></div>
+      <div className="FeaturedItem__info">
+        <h1>{title}</h1>
+        <p className="text-medium">{description}</p>
+        <button className="cta-btn">Cook Now &gt;</button>
+      </div>
     </div>
   );
 };
