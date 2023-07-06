@@ -5,16 +5,18 @@ import starSolidIcon from "../../assets/images/icon-star-solid.svg";
 import "./RecipeCard.css";
 import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-const RecipeCard = ({ title, time, rating, favorited, image }) => {
+const RecipeCard = ({ name, cookTimeMinutes, rating, favorited, image }) => {
   return (
     <div className="RecipeCard__container">
-      <img className="RecipeCard__img" src={image} alt={title} />
+      <img className="RecipeCard__img" src={image} alt={name} />
 
       <div className="RecipeCard__info">
         <div>
-          <h2 className="RecipeCard__header">{title}</h2>
-          {time && (
-            <p className="RecipeCard__time text-small prevent-select">{time}</p>
+          <h2 className="RecipeCard__header">{name}</h2>
+          {cookTimeMinutes && (
+            <p className="RecipeCard__time text-small prevent-select">
+              {cookTimeMinutes}
+            </p>
           )}
         </div>
 

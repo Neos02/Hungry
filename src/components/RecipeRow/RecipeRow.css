@@ -1,0 +1,19 @@
+.RecipeRow__title {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid rgba(var(--black), 0.2);
+}
+
+.RecipeRow__recipes-scroll,
+.RecipeRow__recipes-no-scroll {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.RecipeRow__recipes-scroll {
+  gap: 1.75rem;
+}
+
+.RecipeRow__recipes-no-scroll {
+  gap: 2.625rem;
+}
