@@ -6,7 +6,7 @@ import RecipeCard from "../RecipeCard/RecipeCard";
 const RecipeRow = ({ title = "", recipes, scrollable = false }) => {
   return (
     <div>
-      <h1 className="RecipeRow__title">{title}</h1>
+      {title && <h1 className="RecipeRow__title">{title}</h1>}
 
       <div
         className={

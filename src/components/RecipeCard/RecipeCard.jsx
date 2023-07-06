@@ -8,7 +8,7 @@ import FavoriteButton from "../FavoriteButton/FavoriteButton";
 const RecipeCard = ({ name, cookTimeMinutes, rating, favorited, image }) => {
   return (
     <div className="RecipeCard__container">
-      <img className="RecipeCard__img" src={image} alt={name} />
+      <img className="RecipeCard__img prevent-select" src={image} alt={name} />
 
       <div className="RecipeCard__info">
         <div>
