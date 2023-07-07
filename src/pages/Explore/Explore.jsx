@@ -1,49 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 import FeaturedItem from "../../components/FeaturedItem/FeaturedItem";
-import FoodImage from "../../assets/temp/Food Image.png";
-import PastaImage from "../../assets/temp/image 1.png";
 import RecipeRow from "../../components/RecipeRow/RecipeRow";
-
-const recipes = [
-  {
-    name: "Title",
-    cookTimeMinutes: "40m",
-    rating: 4.8,
-    favorited: true,
-    image: PastaImage,
-  },
-  {
-    name: "Title",
-    cookTimeMinutes: "40m",
-    rating: 4.8,
-    favorited: true,
-    image: PastaImage,
-  },
-  {
-    name: "Title",
-    cookTimeMinutes: "40m",
-    rating: 4.8,
-    favorited: true,
-    image: PastaImage,
-  },
-  {
-    name: "Title",
-    cookTimeMinutes: "40m",
-    rating: 4.8,
-    favorited: true,
-    image: PastaImage,
-  },
-];
+import {
+  getAllRecipes,
+  getRecipesInCategory,
+} from "../../services/RecipeService";
 
 const Explore = () => {
+  const [recipes, setRecipes] = useState([]);
+  const [featured, setFeatured] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+
+    getAllRecipes((response) => {
+      if (isMounted) {
+        setRecipes(response.data);
+      }
+    });
+
+    getRecipesInCategory("Featured", (response) => {
+      if (isMounted && response.data.recipes.length) {
+        const featuredRecipes = response.data.recipes;
+
+        setFeatured(
+          featuredRecipes[
+            Math.floor(Math.random() * response.data.recipes.length)
+          ]
+        );
+      }
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+
   return (
     <div>
-      <FeaturedItem
-        name="Title"
-        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque in eleifend mauris, nec feugiat massa. Etiam commodo, nibh sed dignissim consequat, erat enim suscipit turpis, id tincidunt ante massa eget massa."
-        image={FoodImage}
-      />
+      {featured && <FeaturedItem recipe={featured} />}
 
       <RecipeRow title="Most Popular" recipes={recipes} />
     </div>

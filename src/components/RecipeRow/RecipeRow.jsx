@@ -16,14 +16,7 @@ const RecipeRow = ({ title = "", recipes, scrollable = false }) => {
         }
       >
         {recipes.map((recipe, i) => (
-          <RecipeCard
-            key={i}
-            name={recipe.name}
-            cookTimeMinutes={recipe.cookTimeMinutes}
-            rating={recipe.rating}
-            favorited={recipe.favorited}
-            image={recipe.image}
-          />
+          <RecipeCard key={i} recipe={recipe} />
         ))}
       </div>
     </div>

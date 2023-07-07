@@ -1,33 +1,54 @@
 import React from "react";
 
-import starSolidIcon from "../../assets/images/icon-star-solid.svg";
+// import starSolidIcon from "../../assets/images/icon-star-solid.svg";
+// import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 import "./RecipeCard.css";
-import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
-const RecipeCard = ({ name, cookTimeMinutes, rating, favorited, image }) => {
+const RecipeCard = ({ recipe }) => {
+  const getFormattedCookTime = (cookTimeMinutes) => {
+    let hours = Math.floor(cookTimeMinutes / 60);
+    let minutes = cookTimeMinutes % 60;
+
+    let result = "";
+
+    if (hours) {
+      result = `${result} ${hours}h`;
+    }
+
+    if (minutes) {
+      result = `${result} ${minutes}m`;
+    }
+
+    return result;
+  };
+
   return (
     <div className="RecipeCard__container">
-      <img className="RecipeCard__img prevent-select" src={image} alt={name} />
+      <img
+        className="RecipeCard__img prevent-select"
+        src={`https://drive.google.com/uc?export=view&id=${recipe?.imageUrl}`}
+        alt={recipe?.name}
+      />
 
       <div className="RecipeCard__info">
         <div>
-          <h2 className="RecipeCard__header">{name}</h2>
-          {cookTimeMinutes && (
+          <h2 className="RecipeCard__header">{recipe?.name}</h2>
+          {recipe?.cookTimeMinutes && (
             <p className="RecipeCard__time text-small prevent-select">
-              {cookTimeMinutes}
+              {getFormattedCookTime(recipe?.cookTimeMinutes)}
             </p>
           )}
         </div>
 
-        <div className="RecipeCard__lower">
+        {/* <div className="RecipeCard__lower">
           <div className="RecipeCard__rating">
             <img className="prevent-select" src={starSolidIcon} alt="star" />
-            <span className="prevent-select text-medium">{rating}</span>
+            <span className="prevent-select text-medium">{recipe?.rating}</span>
           </div>
 
-          <FavoriteButton defaultFavorited={favorited} />
-        </div>
+          <FavoriteButton defaultFavorited={recipe?.favorited} />
+        </div> */}
       </div>
     </div>
   );
