@@ -27,7 +27,7 @@ const RecipeCard = ({ recipe }) => {
     <div className="RecipeCard__container">
       <img
         className="RecipeCard__img prevent-select"
-        src={`https://drive.google.com/uc?export=view&id=${recipe?.imageUrl}`}
+        src={`${process.env.REACT_APP_HUNGRY_API_BASE_URL}/images/${recipe?.id}`}
         alt={recipe?.name}
       />
 

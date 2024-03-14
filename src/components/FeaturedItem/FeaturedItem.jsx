@@ -7,7 +7,7 @@ const FeaturedItem = ({ recipe }) => {
     <div className="FeaturedItem__container">
       <img
         className="FeaturedItem__img"
-        src={`https://drive.google.com/uc?export=view&id=${recipe?.imageUrl}`}
+        src={`${process.env.REACT_APP_HUNGRY_API_BASE_URL}/images/${recipe?.id}`}
         alt={recipe?.name}
       />
 

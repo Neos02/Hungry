@@ -1,6 +1,6 @@
 import axios from "axios";
 
-axios.defaults.baseURL = "http://192.168.4.25:8080/api";
+axios.defaults.baseURL = process.env.REACT_APP_HUNGRY_API_BASE_URL;
 
 export const getAllRecipes = (successCallback, errorCallback) => {
   axios
