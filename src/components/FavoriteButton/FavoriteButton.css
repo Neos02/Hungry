@@ -1,3 +1,4 @@
 .FavoriteButton__btn {
-	cursor: pointer;
+  display: flex;
+  cursor: pointer;
 }

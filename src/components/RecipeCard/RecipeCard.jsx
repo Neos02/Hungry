@@ -1,7 +1,7 @@
 import React from "react";
 
-// import starSolidIcon from "../../assets/images/icon-star-solid.svg";
-// import FavoriteButton from "../FavoriteButton/FavoriteButton";
+import starSolidIcon from "../../assets/images/icon-star-solid.svg";
+import FavoriteButton from "../FavoriteButton/FavoriteButton";
 
 import "./RecipeCard.css";
 
@@ -41,14 +41,14 @@ const RecipeCard = ({ recipe }) => {
           )}
         </div>
 
-        {/* <div className="RecipeCard__lower">
+        <div className="RecipeCard__lower">
           <div className="RecipeCard__rating">
             <img className="prevent-select" src={starSolidIcon} alt="star" />
             <span className="prevent-select text-medium">{recipe?.rating}</span>
           </div>
 
           <FavoriteButton defaultFavorited={recipe?.favorited} />
-        </div> */}
+        </div>
       </div>
     </div>
   );
