@@ -6,6 +6,7 @@ import {
   getAllRecipes,
   getRecipesInCategory,
 } from "../../services/RecipeService";
+import NavBar from "../../components/NavBar/NavBar";
 
 const Explore = () => {
   const [recipes, setRecipes] = useState([]);
@@ -39,6 +40,8 @@ const Explore = () => {
 
   return (
     <div>
+      <NavBar />
+
       {featured && <FeaturedItem recipe={featured} />}
 
       <RecipeRow title="Most Popular" recipes={recipes} />

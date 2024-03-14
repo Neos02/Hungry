@@ -2,3 +2,7 @@
   display: flex;
   cursor: pointer;
 }
+
+.FavoriteButton__btn svg * {
+  transition: all 0.15s linear;
+}

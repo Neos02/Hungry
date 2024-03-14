@@ -1,0 +1,64 @@
+.NavBar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 3rem;
+  margin: 1rem 0 2rem 0;
+}
+
+.NavBar__logo {
+  height: 100%;
+}
+
+.NavBar__nav-list {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.NavBar__nav-left,
+.NavBar__nav-right {
+  display: flex;
+  align-items: center;
+  gap: 4.5rem;
+  height: 100%;
+}
+
+.NavBar__nav-list a {
+  text-decoration: none;
+  color: black;
+  border-bottom: 2px solid transparent;
+  transition: border 0.15s linear;
+}
+
+.NavBar__nav-list a:hover {
+  border-bottom: 2px solid rgb(var(--red));
+}
+
+.NavBar__search-bar {
+  background-color: #f0f0f0;
+  border-radius: 0.625rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2rem;
+}
+
+.NavBar__search-bar input {
+  background: none;
+  border: none;
+  padding: 0 1rem;
+}
+
+.NavBar__search-bar input:focus {
+  outline: none;
+}
+
+.NavBar__search-bar button {
+  padding-right: 1rem;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
